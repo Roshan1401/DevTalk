@@ -154,6 +154,7 @@ const getAllPosts = asyncHandler(async (req, res) => {
 
       return {
         ...post.toObject(),
+        files: post.files ?? [],
         isLiked: !!isLiked,
         isBookmarked: !!isBookmarked,
       };

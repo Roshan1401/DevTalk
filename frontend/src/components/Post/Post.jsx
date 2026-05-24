@@ -70,8 +70,6 @@ function Post({ post }) {
       });
 
       if (data) {
-        console.log("Liked post:", data);
-
         dispatch(
           updatePostLikes({
             postId: post._id,
@@ -119,10 +117,10 @@ function Post({ post }) {
       </div>
       <div className="post-content">
         <div className="post-header">
-          <UserLink name={author.name} username={author.username} />
+          <UserLink name={author?.name} username={author?.username} />
           <UserLink
-            name={author.name}
-            username={author.username}
+            name={author?.name}
+            username={author?.username}
             variant="username"
           />
           <span className="post-time">· {timeAgo(post.createdAt)}</span>
