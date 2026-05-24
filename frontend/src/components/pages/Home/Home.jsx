@@ -51,9 +51,6 @@ function Home() {
                   No posts available. Follow users to see their posts.
                 </p>
               )}
-              {posts.map((post) => (
-                <Post key={post._id} post={post} />
-              ))}
             </div>
           )}
         </div>
