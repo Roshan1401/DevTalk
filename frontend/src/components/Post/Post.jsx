@@ -117,12 +117,8 @@ function Post({ post }) {
       </div>
       <div className="post-content">
         <div className="post-header">
-          <UserLink name={author?.name} username={author?.username} />
-          <UserLink
-            name={author?.name}
-            username={author?.username}
-            variant="username"
-          />
+          <UserLink username={author?.username} />
+          <UserLink username={author?.username} variant="username" />
           <span className="post-time">· {timeAgo(post.createdAt)}</span>
 
           <OverFlowMenu>
