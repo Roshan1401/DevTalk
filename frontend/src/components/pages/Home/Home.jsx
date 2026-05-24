@@ -15,6 +15,7 @@ function Home() {
   const { request } = useApi();
 
   useEffect(() => {
+    console.log("Fetching posts...");
     const fetchPosts = async () => {
       try {
         const data = await request("GET", "/post/getAllPosts");
@@ -45,6 +46,11 @@ function Home() {
             <LoadingSpinner variant="page" />
           ) : (
             <div className="posts-list">
+              {posts.length === 0 && (
+                <p className="no-posts-message">
+                  No posts available. Follow users to see their posts.
+                </p>
+              )}
               {posts.map((post) => (
                 <Post key={post._id} post={post} />
               ))}
